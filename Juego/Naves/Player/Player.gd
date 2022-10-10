@@ -14,9 +14,10 @@ export var potencia_rotacion: int = 280
 ## ATRIBUTOS
 var empuje: Vector2 = Vector2.ZERO
 var dir_rotacion: int = 0
+## ATRIBUTOS ONREADY
+onready var canion:Canion = $Canion
 
 ## METODOS
-
 func _ready() -> void:
 	pass
 
@@ -45,6 +46,12 @@ func player_input() -> void:
 		dir_rotacion += 1
 	elif Input.is_action_pressed("mover_antihorario"):
 		dir_rotacion -= 1
+	
+	# DISPARO
+	if Input.is_action_pressed("disparo_ppal"):
+		canion.set_esta_disparando(true)
+	if Input.is_action_just_released("disparo_ppal"):
+		canion.set_esta_disparando(false)
 
 
 
