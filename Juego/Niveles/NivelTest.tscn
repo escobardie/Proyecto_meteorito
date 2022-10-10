@@ -4,8 +4,5 @@
 
 [node name="NivelTest" type="Node2D"]
 
-[node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 438.123, 106.356 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 454.892, 331.908 )
