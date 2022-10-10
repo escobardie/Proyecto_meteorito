@@ -14,12 +14,20 @@ export var potencia_rotacion: int = 280
 ## ATRIBUTOS
 var empuje: Vector2 = Vector2.ZERO
 var dir_rotacion: int = 0
+
 ## ATRIBUTOS ONREADY
 onready var canion:Canion = $Canion
+onready var laser:RayoLaser = $LaserBeam2D
 
 ## METODOS
-func _ready() -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	# DISPARO RAYO
+	#esto es cuando presiono
+	if event.is_action_pressed("disparo_secundario"):
+		laser.set_is_casting(true)
+	#esto es cuando suelto
+	if event.is_action_released("disparo_secundario"):
+		laser.set_is_casting(false)
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
