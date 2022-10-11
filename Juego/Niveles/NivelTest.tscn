@@ -5,6 +5,8 @@
 [ext_resource path="res://default_env.tres" type="Environment" id=3]
 
 [node name="NivelTest" type="Node2D"]
+z_index = -50
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

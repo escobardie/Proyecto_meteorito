@@ -5,6 +5,7 @@ extends RigidBody2D
 ## ATRIBUTOS EXPORT
 export var potencia_motor: int = 20
 export var potencia_rotacion: int = 280
+export var estela_maxima:int = 150
 #**************************************************#
 #ASIGNACION DE VARIABLE
 #TIPADO ESTATICO
@@ -18,6 +19,7 @@ var dir_rotacion: int = 0
 ## ATRIBUTOS ONREADY
 onready var canion:Canion = $Canion
 onready var laser:RayoLaser = $LaserBeam2D
+onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 
 ## METODOS
 func _unhandled_input(event: InputEvent) -> void:
@@ -28,6 +30,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	#esto es cuando suelto
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
+	
+	# CONTROL ESTELA
+	if event.is_action_pressed("mover_adelante"):
+		estela.set_max_points(estela_maxima)
+	elif event.is_action_pressed("mover_atras"):
+		estela.set_max_points(0)
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación

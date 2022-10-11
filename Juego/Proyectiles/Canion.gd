@@ -44,7 +44,7 @@ func disparar() -> void:
 	disparo_sfx.play()
 	timer_enfriamiento.start()
 	for punto_disparo in puntos_disparo:
-		var new_proyectil:Proyectil = proyectil.instance()
+		var new_proyectil:Proyectil  = proyectil.instance()
 		new_proyectil.crear(
 			punto_disparo.global_position,
 			get_owner().rotation,
