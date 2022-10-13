@@ -20,22 +20,31 @@ var dir_rotacion: int = 0
 onready var canion:Canion = $Canion
 onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
+onready var motor_SFX:Motor = $MotorSFX
 
 ## METODOS
 func _unhandled_input(event: InputEvent) -> void:
 	# DISPARO RAYO
-	#esto es cuando presiono
+	# esto es cuando presiono
 	if event.is_action_pressed("disparo_secundario"):
 		laser.set_is_casting(true)
-	#esto es cuando suelto
+		
+	# esto es cuando suelto
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
 	
-	# CONTROL ESTELA
+	# CONTROL ESTELA Y SONIDO MOTOR
 	if event.is_action_pressed("mover_adelante"):
 		estela.set_max_points(estela_maxima)
+		motor_SFX.sonido_on()
+
 	elif event.is_action_pressed("mover_atras"):
 		estela.set_max_points(0)
+		motor_SFX.sonido_on()
+
+	if (event.is_action_released("mover_adelante") or event.is_action_released("mover_atras")):
+		motor_SFX.sonido_off()
+
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
