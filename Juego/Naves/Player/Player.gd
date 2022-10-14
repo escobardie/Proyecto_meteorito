@@ -31,7 +31,10 @@ onready var colisionador:CollisionShape2D = $CollisionShape2D
 ## METODOS
 func _ready() -> void:
 	controlador_estado(estado_actual)
-	#controlador_estado(ESTADOS.VIVO)
+	#controlador_estado(ESTADOS.SPAWN)
+	# Asignamos la ubicacion donde sera la explosion
+	#Eventos.emit_signal("nave_destruida", global_position)
+	#queue_free()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not esta_input_activo():
@@ -107,6 +110,7 @@ func controlador_estado(nuevo_estado : int) -> void:
 		ESTADOS.MUERTO:
 			colisionador.set_deferred("disabled", true)
 			canion.set_puede_disparar(true)
+			Eventos.emit_signal("nave_destruida", global_position, 3)
 			queue_free()
 		_:
 			printerr("ERROR ES HUMADO, PERDONAR ES DIVINO")
@@ -117,6 +121,9 @@ func esta_input_activo() ->bool:
 		return false
 	return true
 
+
+func destruir() -> void:
+	controlador_estado(ESTADOS.MUERTO)
 
 
 
