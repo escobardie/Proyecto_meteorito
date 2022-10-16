@@ -43,9 +43,9 @@ func desactivar() -> void:
 	$AnimationPlayer.play_backwards("activando")
 
 
-func controlar_colision(esta_activado:bool) -> void:
+func controlar_colision(esta_activ:bool) -> void:
 	#recibimos el bool que determina el estado del colisionador
-	$CollisionShape2D.set_deferred("disabled", esta_activado)
+	$CollisionShape2D.set_deferred("disabled", esta_activ)
 
 
 ## SEÑALES INTERNAS

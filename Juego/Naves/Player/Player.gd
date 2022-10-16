@@ -69,14 +69,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		escudo.activar()
 
 
-func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
 	apply_central_impulse(empuje.rotated(rotation))
 	#Para manejar rotaciones de un rigidbody vamos a utilizar apply_torque_impulse
 	#que lo que hace es tomar como parámetro un valor del tipo float que es el torque y le aplica un impulso rotacional al cuerpo.
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_input()
 
 ## METODO CUSTOM

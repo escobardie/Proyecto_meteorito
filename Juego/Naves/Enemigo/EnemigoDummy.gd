@@ -10,7 +10,7 @@ var hitpoints:float = 10.0
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Canion.set_esta_disparando(true)
 
 

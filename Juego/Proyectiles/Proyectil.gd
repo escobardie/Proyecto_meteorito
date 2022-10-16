@@ -9,7 +9,7 @@ var danio : float = 1.0
 ## METODOS
 
 ## ** CONSTRUCTOR
-func crear (pos:Vector2, dir:float, vel:float, danio_p:int) -> void:
+func crear (pos:Vector2, dir:float, vel:float, _danio_p:int) -> void:
 	position = pos
 	rotation = dir
 	#Con el vector velocidad del proyectil pasa algo parecido al movimiento de la nave… tenemos que rotarla en su dirección.
