@@ -8,6 +8,7 @@ height = 37.7501
 
 [node name="ProyectilPlayer" instance=ExtResource( 1 )]
 z_index = 40
+input_pickable = false
 collision_layer = 8
 collision_mask = 6
 

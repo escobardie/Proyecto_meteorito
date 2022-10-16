@@ -19,6 +19,7 @@ export var estela_maxima:int = 150
 var empuje: Vector2 = Vector2.ZERO
 var dir_rotacion: int = 0
 var estado_actual:int = ESTADOS.SPAWN
+var hitpoints:float = 15.0
 
 
 ## ATRIBUTOS ONREADY
@@ -27,6 +28,8 @@ onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_SFX:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
+onready var impacto_SFX:AudioStreamPlayer = $ImpactSFX
+onready var escudo:Escudo = $Escudo
 
 ## METODOS
 func _ready() -> void:
@@ -60,16 +63,20 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if (event.is_action_released("mover_adelante") or event.is_action_released("mover_atras")):
 		motor_SFX.sonido_off()
+	
+	# ESCUDO
+	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
+		escudo.activar()
 
 
-func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
 	apply_central_impulse(empuje.rotated(rotation))
 	#Para manejar rotaciones de un rigidbody vamos a utilizar apply_torque_impulse
 	#que lo que hace es tomar como parámetro un valor del tipo float que es el torque y le aplica un impulso rotacional al cuerpo.
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_input()
 
 ## METODO CUSTOM
@@ -125,8 +132,11 @@ func esta_input_activo() ->bool:
 func destruir() -> void:
 	controlador_estado(ESTADOS.MUERTO)
 
-
-
+func recibir_danio(danio:float) -> void:
+	hitpoints -= danio
+	if hitpoints <= 0.0:
+		destruir()
+	impacto_SFX.play()
 
 
 ## SEÑALES INTERNAS
