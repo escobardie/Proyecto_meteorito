@@ -4,7 +4,7 @@ extends Area2D
 
 ## ATRIBUTOS
 var velocidad : Vector2 = Vector2.ZERO
-var danio : float #= 1.0
+var danio : float = 1.0
 
 ## METODOS
 

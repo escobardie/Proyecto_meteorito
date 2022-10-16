@@ -19,6 +19,7 @@ export var estela_maxima:int = 150
 var empuje: Vector2 = Vector2.ZERO
 var dir_rotacion: int = 0
 var estado_actual:int = ESTADOS.SPAWN
+var hitpoints:float = 15.0
 
 
 ## ATRIBUTOS ONREADY
@@ -27,6 +28,7 @@ onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_SFX:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
+onready var impacto_SFX:AudioStreamPlayer = $ImpactSFX
 
 ## METODOS
 func _ready() -> void:
@@ -125,8 +127,11 @@ func esta_input_activo() ->bool:
 func destruir() -> void:
 	controlador_estado(ESTADOS.MUERTO)
 
-
-
+func recibir_danio(danio:float) -> void:
+	hitpoints -= danio
+	if hitpoints <= 0.0:
+		destruir()
+	impacto_SFX.play()
 
 
 ## SEÑALES INTERNAS
