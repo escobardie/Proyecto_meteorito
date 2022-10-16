@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/escudoPlayer.ogg-85981b6a3a415ff725149ec1e1049392.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/Escudo/escudoPlayer.ogg"
+dest_files=[ "res://.import/escudoPlayer.ogg-85981b6a3a415ff725149ec1e1049392.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
