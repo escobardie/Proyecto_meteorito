@@ -4,11 +4,13 @@ extends Node2D
 
 ## ATRIBUTOS ONREADY
 onready var contenedor_proyectiles:Node
-onready var contenedor_meteoritos:Node
+onready var contenedor_meteoritos:Node = null
 
 ## ATRIBUTOS EXPORT
 export var explosion:PackedScene = null
 export var meteorito:PackedScene
+export var explosion_meteorito:PackedScene
+
 
 ## METODOS
 func _ready() -> void:
@@ -20,6 +22,7 @@ func conectar_seniales() -> void:
 	Eventos.connect("disparo", self, "_on_disparo")
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
 	Eventos.connect("spawn_meteorito", self, "on_spawn_meteoritos")
+	Eventos.connect("meteorito_destruido",self, "_on_meteorito_destruido")
 
 func crear_contenedor() -> void:
 	#CONTENEDOR PROYECTILES
@@ -54,6 +57,9 @@ func on_spawn_meteoritos(pos_spawn:Vector2, dir_meteorito:Vector2, tamanio:float
 	)
 	contenedor_meteoritos.add_child(new_meteorito)
 
-
+func _on_meteorito_destruido(pos:Vector2) -> void:
+	var new_explosion:ExplosionMeteorito = explosion_meteorito.instance()
+	new_explosion.global_position = pos
+	add_child(new_explosion)
 
 

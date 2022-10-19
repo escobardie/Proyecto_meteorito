@@ -21,8 +21,6 @@ func recibir_danio(danio:float) -> void:
 		queue_free()
 
 
-
-
 ## SEÑALES INTERNAS
 func _on_Area2D_body_entered(body: Node) -> void:
 	print("entra por aca")
