@@ -211,9 +211,11 @@ collision_mask = 16
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.215686, 0.223529, 0.223529, 1 )
 shape = SubResource( 1 )
 
 [node name="SpriteCompleto" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1.4, 0 )
 rotation = 1.5708
 texture = ExtResource( 3 )
@@ -228,6 +230,7 @@ texture = ExtResource( 4 )
 visible = false
 position = Vector2( 12.347, 0 )
 rotation = 1.5708
+scale = Vector2( 1, 1.02048 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
