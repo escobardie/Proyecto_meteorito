@@ -9,6 +9,8 @@ enum ESTADOS {SPAWN, VIVO, INVENSIBLE, MUERTO}
 export var potencia_motor: int = 20
 export var potencia_rotacion: int = 280
 export var estela_maxima:int = 150
+
+
 #**************************************************#
 #ASIGNACION DE VARIABLE
 #TIPADO ESTATICO
@@ -30,6 +32,7 @@ onready var motor_SFX:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_SFX:AudioStreamPlayer = $ImpactSFX
 onready var escudo:Escudo = $Escudo
+
 
 ## METODOS
 func _ready() -> void:
@@ -67,7 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# ESCUDO
 	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
 		escudo.activar()
-
+	
 
 func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
