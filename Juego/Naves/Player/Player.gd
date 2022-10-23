@@ -26,13 +26,21 @@ var hitpoints:float = 15.0
 
 ## ATRIBUTOS ONREADY
 onready var canion:Canion = $Canion
-onready var laser:RayoLaser = $LaserBeam2D
+onready var laser:RayoLaser = $LaserBeam2D setget ,get_laser
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_SFX:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_SFX:AudioStreamPlayer = $ImpactSFX
-onready var escudo:Escudo = $Escudo
+onready var escudo:Escudo = $Escudo setget ,get_escudo
 
+
+
+## SETTER AND GETTER
+func get_laser() -> RayoLaser:
+	return laser
+
+func get_escudo() -> Escudo:
+	return escudo
 
 ## METODOS
 func _ready() -> void:
