@@ -4,21 +4,23 @@ extends Area2D
 
 # VARIABLES
 var esta_activado:bool = false setget ,get_esta_activado
+var energia_original:float
+
 
 ## VARIABLES EXPORT
 #Si por ejemplo queremos que el escudo dure 5 segundos y le damos una energía de 8,0:
 #8,0 / 5s = 1,6 → cuánta energía por segundo hay que consumir.
 #8.0 / 10s = 0.8
 export var energia:float = 8.0
-export var radio_desaste:float = -0.8
+export var radio_desgaste:float = -0.8
 
 ## METODOS
 func _process(delta: float) -> void:
-	energia += radio_desaste * delta
-	if energia <= 0.0:
-		desactivar()
+	control_energia(radio_desgaste * delta)
+
 
 func _ready() -> void:
+	energia_original = energia
 	#Ahora al iniciar no se consume energía (el _process no corre)
 	set_process(false)
 	controlar_colision(true)
@@ -28,6 +30,16 @@ func get_esta_activado() ->bool:
 	return esta_activado
 
 ## METODOS CUSTOMER
+func control_energia(consumo:float)-> void:
+	energia += consumo
+	# solo de prueba QUIETA LUEGO
+	print("Energia Escudo: ", energia)
+	
+	if energia > energia_original:
+		energia = energia_original	
+	elif energia <= 0.0:
+		desactivar()
+
 func activar()-> void:
 	if energia <= 0.0:
 		return

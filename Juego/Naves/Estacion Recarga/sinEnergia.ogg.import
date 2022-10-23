@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sinEnergia.ogg-9322e77cf099cb826432a2e03046b413.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Estacion Recarga/sinEnergia.ogg"
+dest_files=[ "res://.import/sinEnergia.ogg-9322e77cf099cb826432a2e03046b413.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
