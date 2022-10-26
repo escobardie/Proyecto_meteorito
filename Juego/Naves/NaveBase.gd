@@ -16,7 +16,7 @@ export var hitpoints:float = 20.0
 #**************************************************#
 ## ATRIBUTOS
 var estado_actual:int = ESTADOS.SPAWN
-
+var num_explosiones:int = 3
 
 ## ATRIBUTOS ONREADY
 onready var colisionador:CollisionShape2D = $CollisionShape2D
@@ -44,7 +44,7 @@ func controlador_estado(nuevo_estado : int) -> void:
 		ESTADOS.MUERTO:
 			colisionador.set_deferred("disabled", true)
 			canion.set_puede_disparar(false)
-			Eventos.emit_signal("nave_destruida",self, global_position, 3)
+			Eventos.emit_signal("nave_destruida",self, global_position, num_explosiones)
 			queue_free()
 		_:
 			printerr("ERROR ES HUMADO, PERDONAR ES DIVINO")

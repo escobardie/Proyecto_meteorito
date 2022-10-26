@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Naves/Enemigo/EnemigoBase.gd"
 }, {
-"base": "NaveBase",
+"base": "EnemigoBase",
 "class": "EnemigoInterceptor",
 "language": "GDScript",
 "path": "res://Juego/Naves/Enemigo/EnemigoInterceptor.gd"
@@ -129,6 +129,7 @@ config/icon="res://icon_game.png"
 [autoload]
 
 Eventos="*res://Juego/Autoloads/Eventos.gd"
+DatosJuego="*res://Juego/Autoloads/DatosJuego.gd"
 
 [debug]
 

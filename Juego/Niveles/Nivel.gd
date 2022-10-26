@@ -8,6 +8,7 @@ export var meteorito:PackedScene
 export var explosion_meteorito:PackedScene
 export var sector_meteoritos:PackedScene #= null
 export var tiempo_transicion_camara:float = 2.0
+export var enemigo_interceptor:PackedScene = null
 
 ## ATRIBUTOS ONREADY
 onready var contenedor_proyectiles:Node
@@ -15,18 +16,18 @@ onready var contenedor_meteoritos:Node = null
 onready var contenedor_sector_meteoritos:Node = null
 onready var camara_nivel:Camera2D = $CamaraNivel
 onready var camara_player:Camera2D = $Player/CamaraPlayer
+onready var contenedor_enemigo:Node
 
 ## ATRIBUTOS 
 var meteoritos_totales:int = 0
-
-## VARIABLE
-
+var player:Player = null
 
 
 ## METODOS
 func _ready() -> void:
 	conectar_seniales()
 	crear_contenedor()
+	player = DatosJuego.get_player_actual()
 
 ## METODOS CUSTOMER
 func conectar_seniales() -> void:
@@ -52,6 +53,12 @@ func crear_contenedor() -> void:
 	contenedor_sector_meteoritos = Node.new()
 	contenedor_sector_meteoritos.name = "ContenedorSectorMeteoritos"
 	add_child(contenedor_sector_meteoritos)
+	
+	#CONTENEDOR ENEMIGOS
+	contenedor_enemigo = Node.new()
+	contenedor_enemigo.name = "ContenedorEnemigo"
+	add_child(contenedor_enemigo)
+	
 
 
 func crear_sector_meteoritos(centro_camara:Vector2, numero_peligros:int) ->void:
@@ -68,6 +75,15 @@ func crear_sector_meteoritos(centro_camara:Vector2, numero_peligros:int) ->void:
 		camara_nivel,
 		tiempo_transicion_camara
 	)
+
+func crear_sector_enemigos(num_enemigo: int) ->void:
+	for _i in range(num_enemigo):
+		var new_interceptor:EnemigoInterceptor = enemigo_interceptor.instance()
+		var spawn_pos:Vector2 = crear_posicion_random(1000.0, 800.0)
+		new_interceptor.global_position = player.global_position + spawn_pos
+		contenedor_enemigo.add_child(new_interceptor)
+
+
 
 
 func transicion_camara(desde: Vector2, hasta: Vector2, camara_actual:Camera2D, tiempo_transicion:float) -> void:
@@ -145,7 +161,7 @@ func _on_nave_en_sector_peligroso(centro_cam:Vector2, tipo_peligro:String, num_p
 	if tipo_peligro == "Meteorito":
 		crear_sector_meteoritos(centro_cam, num_peligros)
 	elif tipo_peligro == "Enemigo":
-		pass
+		crear_sector_enemigos(num_peligros)
 
 
 
