@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "AreaAtraccion",
+"language": "GDScript",
+"path": "res://Juego/Naves/Estaciones/AreaAtraccion.gd"
+}, {
+"base": "Node2D",
+"class": "BaseEnemiga",
+"language": "GDScript",
+"path": "res://Juego/Naves/Estaciones/BaseEnemiga.gd"
+}, {
 "base": "Camera2D",
 "class": "CamaraJuego",
 "language": "GDScript",
@@ -39,10 +49,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/Escudo/Escudo.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "EstacionRecarga",
 "language": "GDScript",
-"path": "res://Juego/Naves/Estacion Recarga/EstacionRecarga.gd"
+"path": "res://Juego/Naves/Estaciones/EstacionRecarga.gd"
 }, {
 "base": "Line2D",
 "class": "Estela",
@@ -100,6 +110,8 @@ _global_script_classes=[ {
 "path": "res://Juego/Meteoritos/SectorMeteoritos.gd"
 } ]
 _global_script_class_icons={
+"AreaAtraccion": "",
+"BaseEnemiga": "",
 "CamaraJuego": "",
 "CamaraPlayer": "",
 "Canion": "",
@@ -221,6 +233,7 @@ recarga_laser={
 2d_physics/layer_3="meteorito"
 2d_physics/layer_4="proyectil_player"
 2d_physics/layer_5="proyectil_enemigo"
+2d_physics/layer_6="base_enemiga"
 
 [physics]
 

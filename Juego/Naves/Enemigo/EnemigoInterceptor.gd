@@ -41,17 +41,17 @@ func controlador_estados_ia(nuevo_estado:int) -> void:
 	estado_ia_actual = nuevo_estado
 
 ## SEÑALES INTERNAS
-func _on_AreaDsiparo_body_entered(body: Node) -> void:
+func _on_AreaDsiparo_body_entered(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOP)
 
 
-func _on_AreaDsiparo_body_exited(body: Node) -> void:
+func _on_AreaDsiparo_body_exited(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.PERSECUCION)
 
 
-func _on_AreaDeteccion_body_entered(body: Node) -> void:
+func _on_AreaDeteccion_body_entered(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOQ)
 
 
-func _on_AreaDeteccion_body_exited(body: Node) -> void:
+func _on_AreaDeteccion_body_exited(_body: Node) -> void:
 	controlador_estados_ia(ESTADO_IA.ATACANDOP)
