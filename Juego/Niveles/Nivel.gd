@@ -9,6 +9,7 @@ export var explosion_meteorito:PackedScene
 export var sector_meteoritos:PackedScene #= null
 export var tiempo_transicion_camara:float = 2.0
 export var enemigo_interceptor:PackedScene = null
+export var rele_masa:PackedScene = null
 
 ## ATRIBUTOS ONREADY
 onready var contenedor_proyectiles:Node
@@ -21,12 +22,13 @@ onready var contenedor_enemigo:Node
 ## ATRIBUTOS 
 var meteoritos_totales:int = 0
 var player:Player = null
-
+var numero_bases_enemigas = 0
 
 ## METODOS
 func _ready() -> void:
 	conectar_seniales()
 	crear_contenedor()
+	numero_bases_enemigas = contabilizar_base_enemiga()
 	player = DatosJuego.get_player_actual()
 
 ## METODOS CUSTOMER
@@ -39,6 +41,10 @@ func conectar_seniales() -> void:
 	Eventos.connect("base_destruida", self, "_on_base_destruida")
 	Eventos.connect("spawn_orbital", self, "_on_spawn_orbital")
 
+func crear_rele() ->void:
+	var new_rele_masa:ReleMasa = rele_masa.instance()
+	new_rele_masa.global_position = player.global_position + crear_posicion_random(1000.0, 800.0)
+	add_child(new_rele_masa)
 
 func crear_contenedor() -> void:
 	#CONTENEDOR PROYECTILES
@@ -131,6 +137,9 @@ func crear_exlposion(posicion:Vector2, numero:int=1,intervalo:float=0.0, rangos_
 		add_child(new_explosion)
 		yield(get_tree().create_timer(intervalo), "timeout")
 
+func contabilizar_base_enemiga() ->int:
+	return $ContenedorBasesEnemigas.get_child_count()
+
 
 ## CONEXION SEÑALES EXTERNAS
 func _on_disparo(proyectil:Proyectil) -> void:
@@ -155,6 +164,10 @@ func _on_base_destruida(_base:BaseEnemiga,pos_partes:Array)-> void:
 	for posicion in pos_partes:
 		crear_exlposion(posicion)
 		yield(get_tree().create_timer(0.5), "timeout")
+	
+	numero_bases_enemigas -=1
+	if numero_bases_enemigas == 0:
+		crear_rele()
 
 func _on_spawn_meteoritos(pos_spawn:Vector2, dir_meteorito:Vector2, tamanio:float) -> void:
 	var new_meteorito:Meteorito = meteorito.instance()

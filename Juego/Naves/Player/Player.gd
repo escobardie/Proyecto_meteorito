@@ -97,5 +97,11 @@ func esta_input_activo() ->bool:
 		return false
 	return true
 
+func desactivar_controles() ->void:
+	controlador_estado(ESTADOS.SPAWN)
+	empuje = Vector2.ZERO
+	motor_SFX.sonido_off()
+	laser.set_is_casting(false)
+
 ## SEÑALES INTERNAS
 
