@@ -28,21 +28,35 @@ enemigo_interceptor = ExtResource( 13 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 1784.09, 1007.78 )
+position = Vector2( 2931.57, 1449.67 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( -607.523, 611.372 )
+position = Vector2( -787.117, -744.562 )
 rotation = 4.46638e-06
 
 [node name="TriggersInterceptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
-position = Vector2( 1580.72, 161.038 )
+position = Vector2( 2571.4, -409.137 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
+
+[node name="ContenedorBasesEnemigas" type="Node" parent="."]
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 2374.49, 668.252 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 946.715, -615.845 )
+
+[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( -481.057, 946.623 )
+
+[node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 1036.51, 1862.55 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
@@ -55,7 +69,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 1601.36, 279.634 )
+position = Vector2( 2627.67, -254.905 )
 texture = ExtResource( 10 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -128,8 +142,5 @@ texture = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1067.94, 639.916 )
-
-[node name="BaseEnemiga" parent="." instance=ExtResource( 14 )]
-position = Vector2( 673.818, 784.003 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]

@@ -37,6 +37,7 @@ func conectar_seniales() -> void:
 	Eventos.connect("meteorito_destruido", self, "_on_meteorito_destruido")
 	Eventos.connect("nave_en_sector_peligro", self, "_on_nave_en_sector_peligroso")
 	Eventos.connect("base_destruida", self, "_on_base_destruida")
+	Eventos.connect("spawn_orbital", self, "_on_spawn_orbital")
 
 
 func crear_contenedor() -> void:
@@ -150,7 +151,7 @@ func _on_nave_destruida(nave:Player, posicion:Vector2, num_explosiones:int) -> v
 	#	add_child(new_explosion)
 	#	yield(get_tree().create_timer(0.6), "timeout")
 
-func _on_base_destruida(pos_partes:Array)-> void:
+func _on_base_destruida(_base:BaseEnemiga,pos_partes:Array)-> void:
 	for posicion in pos_partes:
 		crear_exlposion(posicion)
 		yield(get_tree().create_timer(0.5), "timeout")
@@ -172,13 +173,14 @@ func _on_meteorito_destruido(pos:Vector2) -> void:
 	controlar_meteoritos_restantes()
 
 
-
 func _on_nave_en_sector_peligroso(centro_cam:Vector2, tipo_peligro:String, num_peligros:int) -> void:
 	if tipo_peligro == "Meteorito":
 		crear_sector_meteoritos(centro_cam, num_peligros)
 	elif tipo_peligro == "Enemigo":
 		crear_sector_enemigos(num_peligros)
 
+func _on_spawn_orbital(enemigo: EnemigoOrbital) -> void:
+	contenedor_enemigo.add_child(enemigo)
 
 
 func _on_TweenCamara_tween_completed(object: Object, _key: NodePath) -> void:
