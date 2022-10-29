@@ -30,7 +30,7 @@ rele_masa = ExtResource( 15 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 2931.57, 1449.67 )
+position = Vector2( 2598.95, 149.432 )
 tipo_peligro = "Meteorito"
 numero_peligros = 2
 
@@ -43,14 +43,14 @@ rotation = 4.46638e-06
 [node name="TriggersInterceptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
-position = Vector2( 2571.4, -409.137 )
+position = Vector2( 2087.59, 306.498 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
-position = Vector2( 2374.49, 668.252 )
+position = Vector2( 1185.12, 1766.9 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
@@ -63,7 +63,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 2627.67, -254.905 )
+position = Vector2( 2365.61, 319.619 )
 texture = ExtResource( 10 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

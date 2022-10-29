@@ -6,6 +6,7 @@ extends NaveBase
 ## ATRIBUTOS
 var player_objetivo:Player = null
 var dir_player:Vector2
+var frame_actual:int = 0
 
 
 ## METODOS
@@ -17,7 +18,12 @@ func _ready() -> void:
 	
 
 func _physics_process(_delta: float) -> void:
-	rotar_hacia_player()
+	#¿Qué estamos haciendo ahí? Creando un contador que suma 1 
+	#cuadro a cuadro y que cada 3 cuadros permite entrar al condicional y
+	#hacer rotar_hacia_player (variable % 3 == 0, siendo % el módulo).
+	frame_actual += 1
+	if frame_actual % 3 == 0:
+		rotar_hacia_player()
 
 
 func _on_Player_body_entered(body: Node) -> void:
