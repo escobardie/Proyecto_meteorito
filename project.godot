@@ -110,11 +110,6 @@ _global_script_classes=[ {
 "path": "res://Juego/Proyectiles/Laser/LaserBeam2D.gd"
 }, {
 "base": "Node2D",
-"class": "ReleMasa",
-"language": "GDScript",
-"path": "res://Juego/Naves/Estaciones/Rele/ReleMasa.gd"
-}, {
-"base": "Node2D",
 "class": "SectorMeteoritos",
 "language": "GDScript",
 "path": "res://Juego/Meteoritos/SectorMeteoritos.gd"
@@ -140,7 +135,6 @@ _global_script_class_icons={
 "Player": "",
 "Proyectil": "",
 "RayoLaser": "",
-"ReleMasa": "",
 "SectorMeteoritos": ""
 }
 

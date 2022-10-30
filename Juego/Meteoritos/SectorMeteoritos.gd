@@ -38,7 +38,7 @@ func _on_SpawnTimer_timeout() -> void:
 	cantidad_meteoritos -=1
 
 func _on_detector_body_entered(body: Node) -> void:
-	body.set_esta_en_sector(false)
+	body.set_esta_ean_sector(false)
 
 #CONSTRUCTOR
 func crear(pos:Vector2, meteoritos:int) -> void:
