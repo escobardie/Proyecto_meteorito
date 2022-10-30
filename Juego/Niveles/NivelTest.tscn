@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Juego/Naves/Enemigo/EnemigoInterceptor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Juego/Naves/Estaciones/Rele/ReleMasa.tscn" type="PackedScene" id=15]
 
 [node name="NivelTest" type="Node2D"]
 z_index = -50
@@ -25,14 +24,12 @@ meteorito = ExtResource( 5 )
 explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 6 )
 enemigo_interceptor = ExtResource( 13 )
-rele_masa = ExtResource( 15 )
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
 position = Vector2( 2931.57, 1449.67 )
 tipo_peligro = "Meteorito"
-numero_peligros = 2
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
