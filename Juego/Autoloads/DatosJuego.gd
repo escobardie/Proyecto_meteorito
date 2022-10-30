@@ -11,7 +11,10 @@ func set_player_actual(player:Player) -> void:
 
 func get_player_actual() -> Player:
 	return player_actual
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 ##arreglando bug
 func _ready() -> void:
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")

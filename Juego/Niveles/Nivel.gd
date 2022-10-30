@@ -30,7 +30,10 @@ func _ready() -> void:
 	crear_contenedor()
 	numero_bases_enemigas = contabilizar_base_enemiga()
 	player = DatosJuego.get_player_actual()
+<<<<<<< Updated upstream
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+=======
+>>>>>>> Stashed changes
 
 ## METODOS CUSTOMER
 func conectar_seniales() -> void:
@@ -44,6 +47,7 @@ func conectar_seniales() -> void:
 
 func crear_rele() ->void:
 	var new_rele_masa:ReleMasa = rele_masa.instance()
+<<<<<<< Updated upstream
 	var pos_random:Vector2 = crear_posicion_random(400.0, 200.0)
 	var margen:Vector2 = Vector2(600.0, 600.0)
 	if pos_random.x < 0:
@@ -52,6 +56,9 @@ func crear_rele() ->void:
 		margen.y *= -1
 	new_rele_masa.global_position = player.global_position + (margen + pos_random)
 	#new_rele_masa.global_position = player.global_position + crear_posicion_random(1000.0, 800.0)
+=======
+	new_rele_masa.global_position = player.global_position + crear_posicion_random(1000.0, 800.0)
+>>>>>>> Stashed changes
 	add_child(new_rele_masa)
 
 func crear_contenedor() -> void:
