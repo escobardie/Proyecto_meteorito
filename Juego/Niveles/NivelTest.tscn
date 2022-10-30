@@ -35,8 +35,22 @@ numero_peligros = 1
 position = Vector2( 307.372, 530.646 )
 rotation = 4.46638e-06
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 969.298, 516.721 )
+=======
+[node name="TriggersInterceptores" type="Node" parent="."]
+
+[node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
+position = Vector2( 2087.59, 306.498 )
+tipo_peligro = "Enemigo"
+numero_peligros = 1
+
+[node name="ContenedorBasesEnemigas" type="Node" parent="."]
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 1185.12, 1766.9 )
+>>>>>>> Stashed changes
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
