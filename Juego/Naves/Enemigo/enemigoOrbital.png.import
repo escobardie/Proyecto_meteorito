@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceRecarga.png-c8ee278ad70d6899938189f71f0c5490.stex"
+path="res://.import/enemigoOrbital.png-58ea033012c6f726ac0743178680fda5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Naves/Estacion Recarga/spaceRecarga.png"
-dest_files=[ "res://.import/spaceRecarga.png-c8ee278ad70d6899938189f71f0c5490.stex" ]
+source_file="res://Juego/Naves/Enemigo/enemigoOrbital.png"
+dest_files=[ "res://.import/enemigoOrbital.png-58ea033012c6f726ac0743178680fda5.stex" ]
 
 [params]
 

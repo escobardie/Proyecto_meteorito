@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -11,7 +11,10 @@
 [ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://Juego/Niveles/CamaraJuego.gd" type="Script" id=11]
-[ext_resource path="res://Juego/Naves/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Juego/Naves/Enemigo/EnemigoInterceptor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Juego/Naves/Estaciones/Rele/ReleMasa.tscn" type="PackedScene" id=15]
 
 [node name="NivelTest" type="Node2D"]
 z_index = -50
@@ -21,20 +24,23 @@ explosion = ExtResource( 4 )
 meteorito = ExtResource( 5 )
 explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 6 )
+enemigo_interceptor = ExtResource( 13 )
+rele_masa = ExtResource( 15 )
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 1526.84, 448.263 )
+position = Vector2( 2931.57, 1449.67 )
 tipo_peligro = "Meteorito"
-numero_peligros = 1
+numero_peligros = 2
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 307.372, 530.646 )
+position = Vector2( -787.117, -744.562 )
 rotation = 4.46638e-06
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 969.298, 516.721 )
@@ -45,12 +51,24 @@ position = Vector2( 969.298, 516.721 )
 position = Vector2( 2087.59, 306.498 )
 tipo_peligro = "Enemigo"
 numero_peligros = 1
+=======
+[node name="TriggersInterceptores" type="Node" parent="."]
+
+[node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
+position = Vector2( 2571.4, -409.137 )
+tipo_peligro = "Enemigo"
+numero_peligros = 2
+>>>>>>> dev_orbital
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+<<<<<<< HEAD
 position = Vector2( 1185.12, 1766.9 )
 >>>>>>> Stashed changes
+=======
+position = Vector2( 2374.49, 668.252 )
+>>>>>>> dev_orbital
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
@@ -63,7 +81,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Icon" type="Sprite" parent="."]
-position = Vector2( 1522.1, 547.429 )
+position = Vector2( 2627.67, -254.905 )
 texture = ExtResource( 10 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -133,5 +151,8 @@ texture = ExtResource( 8 )
 [node name="Sprite15" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 2048, 1024 )
 texture = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1067.94, 639.916 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
