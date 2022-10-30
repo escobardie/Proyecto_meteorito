@@ -38,6 +38,7 @@ position = Vector2( -787.117, -744.562 )
 rotation = 4.46638e-06
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 969.298, 516.721 )
@@ -75,6 +76,10 @@ position = Vector2( -481.057, 946.623 )
 
 [node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
 position = Vector2( 1036.51, 1862.55 )
+=======
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 969.298, 516.721 )
+>>>>>>> parent of 595bb6e (prueba)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
