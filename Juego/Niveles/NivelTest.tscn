@@ -67,6 +67,15 @@ position = Vector2( 1185.12, 1766.9 )
 position = Vector2( 2374.49, 668.252 )
 >>>>>>> dev_orbital
 
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 946.715, -615.845 )
+
+[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( -481.057, 946.623 )
+
+[node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" instance=ExtResource( 14 )]
+position = Vector2( 1036.51, 1862.55 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
 
