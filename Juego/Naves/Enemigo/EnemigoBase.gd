@@ -6,10 +6,13 @@ extends NaveBase
 ## ATRIBUTOS
 var player_objetivo:Player = null
 var dir_player:Vector2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 var frame_actual:int = 0
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 
 
 ## METODOS
@@ -21,6 +24,7 @@ func _ready() -> void:
 	
 
 func _physics_process(_delta: float) -> void:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	#¿Qué estamos haciendo ahí? Creando un contador que suma 1 
 	#cuadro a cuadro y que cada 3 cuadros permite entrar al condicional y
@@ -31,6 +35,9 @@ func _physics_process(_delta: float) -> void:
 =======
 	rotar_hacia_player()
 >>>>>>> Stashed changes
+=======
+	rotar_hacia_player()
+>>>>>>> parent of 00de4ae (PULIDO)
 
 
 func _on_Player_body_entered(body: Node) -> void:

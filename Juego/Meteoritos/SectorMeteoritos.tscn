@@ -174,7 +174,6 @@ __meta__ = {
 
 [node name="DetectorIzq" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( -1400, 0 )
-collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -184,7 +183,6 @@ shape = SubResource( 3 )
 
 [node name="DetectorDer" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 1400, 0 )
-collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -194,7 +192,6 @@ shape = SubResource( 3 )
 
 [node name="DetectorSup" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, -900 )
-collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -204,7 +201,6 @@ shape = SubResource( 4 )
 
 [node name="DetectorInfe" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, 900 )
-collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }

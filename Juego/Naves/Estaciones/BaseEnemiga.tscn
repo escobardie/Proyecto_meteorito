@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [gd_scene load_steps=21 format=2]
 =======
 [gd_scene load_steps=19 format=2]
 >>>>>>> Stashed changes
+=======
+[gd_scene load_steps=19 format=2]
+>>>>>>> parent of 00de4ae (PULIDO)
 
 [ext_resource path="res://Juego/Naves/Estaciones/AreaAtraccion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Estaciones/baseEnemiga1_0.png" type="Texture" id=2]
@@ -14,6 +18,7 @@
 [ext_resource path="res://Juego/Naves/Enemigo/AreaColision.gd" type="Script" id=8]
 [ext_resource path="res://Juego/Naves/Enemigo/EnemigoOrbital.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Juego/Naves/Estaciones/PosicionesSpawn.gd" type="Script" id=10]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 [ext_resource path="res://Juego/Naves/Estaciones/Rutas Enemiga/RutaEnemiga.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Juego/Naves/Estaciones/Rutas Enemiga/RutaEnemiga4.tscn" type="PackedScene" id=12]
@@ -22,6 +27,9 @@
 =======
 [ext_resource path="res://Juego/Naves/Estaciones/RutaEnemiga.gd" type="Script" id=11]
 >>>>>>> Stashed changes
+=======
+[ext_resource path="res://Juego/Naves/Estaciones/RutaEnemiga.gd" type="Script" id=11]
+>>>>>>> parent of 00de4ae (PULIDO)
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 43.6844
@@ -106,14 +114,20 @@ tracks/1/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 [sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 22.6786, 113.393, -22.6786, -113.393, -553, -18, -33.2849, 148.928, 33.2849, -148.928, -492.857, -278.928, -65.9014, 127.663, 65.9014, -127.663, -281.178, -500.121, -65.8117, -54.6009, 65.8117, 54.6009, -0.525269, -538.175, -127.252, 17.6389, 127.252, -17.6389, 284.884, -495.364, -119.693, -66.7758, 119.693, 66.7758, 489.428, -283.685, 76.8552, -152.45, -76.8552, 152.45, 563.159, 1.72449, 25.1984, -154.97, -25.1984, 154.97, 484.671, 289.513, 61.7361, -133.552, -61.7361, 133.552, 280.128, 484.542, 139.851, -51.6568, -139.851, 51.6568, -0.525269, 517.84, 54.1766, 89.4544, -54.1766, -89.4544, -283.557, 486.921, -5.03968, 134.812, 5.03968, -134.812, -485.722, 282.377, 0, 0, 0, 0, -549, -1 )
 }
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 [node name="BaseEnemiga" type="Node2D"]
 script = ExtResource( 6 )
 __meta__ = {
@@ -121,10 +135,13 @@ __meta__ = {
 "_edit_vertical_guides_": [ 286.187, -280.174 ]
 }
 orbital = ExtResource( 9 )
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 rutas = [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 12 ) ]
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 
 [node name="AreaColision" type="Area2D" parent="."]
 collision_layer = 32
@@ -196,13 +213,19 @@ position = Vector2( -568, 0 )
 [node name="Este" type="Position2D" parent="PosicionesSpawn"]
 position = Vector2( 568, 0 )
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 [node name="RutaEnemiga" type="Path2D" parent="."]
 curve = SubResource( 7 )
 script = ExtResource( 11 )
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 [node name="TimerSpawnerEnemigos" type="Timer" parent="."]
 
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]

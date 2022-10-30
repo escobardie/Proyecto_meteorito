@@ -11,10 +11,13 @@ func set_player_actual(player:Player) -> void:
 
 func get_player_actual() -> Player:
 	return player_actual
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 ##arreglando bug
 func _ready() -> void:
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")

@@ -28,10 +28,13 @@ func _ready() -> void:
 	conectar_seniales()
 	crear_contenedor()
 	player = DatosJuego.get_player_actual()
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 00de4ae (PULIDO)
 
 ## METODOS CUSTOMER
 func conectar_seniales() -> void:
@@ -46,6 +49,7 @@ func conectar_seniales() -> void:
 <<<<<<< HEAD
 func crear_rele() ->void:
 	var new_rele_masa:ReleMasa = rele_masa.instance()
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	var pos_random:Vector2 = crear_posicion_random(400.0, 200.0)
 	var margen:Vector2 = Vector2(600.0, 600.0)
@@ -58,6 +62,9 @@ func crear_rele() ->void:
 =======
 	new_rele_masa.global_position = player.global_position + crear_posicion_random(1000.0, 800.0)
 >>>>>>> Stashed changes
+=======
+	new_rele_masa.global_position = player.global_position + crear_posicion_random(1000.0, 800.0)
+>>>>>>> parent of 00de4ae (PULIDO)
 	add_child(new_rele_masa)
 =======
 >>>>>>> parent of e82bac6 (Relé de Masa)
