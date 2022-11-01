@@ -9,6 +9,16 @@ signal spawn_meteorito(posicion, direccion, tamanio)
 signal spawn_orbital(orbital)
 signal meteorito_destruido(posicion)
 signal nave_en_sector_peligro(centro_camara, tipo_peligro, num_peligro)
+## HUD
+signal nivel_iniciado()
+signal nivel_terminado()
+signal detecto_zona_recarga(entrando)
+signal cambio_numero_meteoritos(numero)
+signal actualizar_tiempo(tiempo_restante)
+signal cambio_energia_laser(energia_max, energia_actual)
+signal ocultar_energia_laser()
+signal cambio_energia_escudo(energia_max, energia_actual)
+signal ocultar_energia_escudo()
 
 func _ready() -> void:
 	pass 

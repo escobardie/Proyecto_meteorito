@@ -3,7 +3,7 @@ class_name Meteorito
 extends RigidBody2D
 
 ## ATRIBUTOS EXPORT
-export var vel_lineal_base:Vector2 = Vector2(300.0, 300.0)
+export var vel_lineal_base:Vector2 = Vector2(10.0, 10.0)
 export var vel_angular_base:float = 3.0
 export var hitpoints_base:float = 10.0
 
@@ -29,7 +29,10 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	if esta_en_sector:
 		return
 	var mi_transform := state.get_transform()
-	mi_transform.origin = pos_spawn_original	
+	mi_transform.origin = pos_spawn_original
+	#####
+	linear_velocity = vel_spawn_original
+	#####
 	state.set_transform(mi_transform)
 	esta_en_sector = true
 	
@@ -73,7 +76,11 @@ func crear(pos:Vector2, dir:Vector2, tamanio:float) ->void:
 	$CollisionShape2D.shape = forma_colision
 	#CALCULAR VELOCIDAD
 	#con lineal determinamos el angulo de direccion
-	linear_velocity = (vel_angular_base * dir / tamanio) * random_velocidad()
+	##### original
+	#linear_velocity = (vel_angular_base * dir / tamanio) * random_velocidad()
+	######
+	linear_velocity = vel_lineal_base * dir / tamanio * random_velocidad()
+	######
 	vel_spawn_original = linear_velocity
 	#con angular determinamos la velocidad de rotación 
 	angular_velocity = (vel_angular_base / tamanio) * random_velocidad()

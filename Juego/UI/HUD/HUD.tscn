@@ -1,0 +1,231 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://icon_game.png" type="Texture" id=1]
+[ext_resource path="res://Juego/UI/HUD/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Juego/UI/HUD/ContenedorInformacion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/UI/HUD/ContenedorInformacionEnergia.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "mostrar"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "mostrar_suavizado"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ocultar"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "ocultar_suavizado"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 952.0, 1064.0, 16.0, 128.0, 824.0, 936.0, 32.0, 144.0, 1048.0, 920.0, 808.0 ],
+"_edit_vertical_guides_": [ 16.0, 272.0, 1648.0, 1904.0, 32.0, 256.0, 1888.0, 1664.0 ]
+}
+
+[node name="FadeCanvas" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeCanvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="FadeCanvas/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -114.5
+margin_right = 149.0
+margin_bottom = 114.5
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeCanvas"]
+autoplay = "fade_in"
+anims/default = SubResource( 1 )
+anims/fade_in = SubResource( 2 )
+
+[node name="InfoZonaRecarga" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 3 )]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 144.0
+
+[node name="Label" parent="InfoZonaRecarga" index="0"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -48.0
+margin_bottom = 47.0
+text = "EN ZONA DE RECARGA"
+
+[node name="InfoMeteoritos" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 3 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -144.0
+margin_right = 272.0
+margin_bottom = -16.0
+
+[node name="Label" parent="InfoMeteoritos" index="0"]
+anchor_top = 0.496
+anchor_bottom = 0.496
+margin_top = -47.488
+margin_bottom = 47.512
+
+[node name="InfoTiempoRestante" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -272.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 144.0
+auto_ocultar = true
+
+[node name="Label" parent="InfoTiempoRestante" index="0"]
+anchor_top = 0.496
+anchor_bottom = 0.496
+margin_top = -47.488
+margin_bottom = 47.512
+text = "EN ZONA DE RECARGA"
+
+[node name="AnimationPlayer" parent="InfoTiempoRestante" index="1"]
+anims/mostrar = SubResource( 3 )
+anims/mostrar_suavizado = SubResource( 4 )
+anims/ocultar = SubResource( 5 )
+anims/ocultar_suavizado = SubResource( 6 )
+
+[node name="InfoLaser" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 1.0
+anchor_top = 0.807
+anchor_right = 1.0
+anchor_bottom = 0.807
+margin_left = -272.0
+margin_top = -63.5601
+margin_right = -16.0
+margin_bottom = 64.4399
+
+[node name="Label" parent="InfoLaser" index="0"]
+text = "energia laser"
+
+[node name="InfoEscudo" parent="." groups=[
+"contenedor_info",
+] instance=ExtResource( 4 )]
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -272.0
+margin_top = -144.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="Label" parent="InfoEscudo" index="0"]
+text = "energia escudo"
+
+[editable path="InfoZonaRecarga"]
+[editable path="InfoMeteoritos"]
+[editable path="InfoTiempoRestante"]
+[editable path="InfoLaser"]
+[editable path="InfoEscudo"]

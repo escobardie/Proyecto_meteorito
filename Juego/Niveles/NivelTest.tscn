@@ -9,12 +9,12 @@
 [ext_resource path="res://Juego/Explosiones/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondo/fondo2.png" type="Texture" id=8]
 [ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://Juego/Niveles/CamaraJuego.gd" type="Script" id=11]
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Juego/Naves/Enemigo/EnemigoInterceptor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Juego/Naves/Estaciones/Rele/ReleMasa.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Juego/UI/HUD/HUD.tscn" type="PackedScene" id=16]
 
 [node name="NivelTest" type="Node2D"]
 z_index = -50
@@ -26,6 +26,9 @@ explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 6 )
 enemigo_interceptor = ExtResource( 13 )
 rele_masa = ExtResource( 15 )
+tiempo_limite = 300
+
+[node name="HUD" parent="." instance=ExtResource( 16 )]
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
@@ -37,7 +40,7 @@ numero_peligros = 2
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( -787.117, -744.562 )
+position = Vector2( -83.117, 1735.44 )
 rotation = 4.46638e-06
 
 [node name="TriggersInterceptores" type="Node" parent="."]
@@ -62,9 +65,10 @@ script = ExtResource( 11 )
 
 [node name="TweenCamara" type="Tween" parent="."]
 
-[node name="Icon" type="Sprite" parent="."]
-position = Vector2( 2365.61, 319.619 )
-texture = ExtResource( 10 )
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="ActualizadorTimer" type="Timer" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -138,3 +142,5 @@ texture = ExtResource( 8 )
 position = Vector2( 1067.94, 639.916 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
+[connection signal="timeout" from="ActualizadorTimer" to="." method="_on_ActualizadorTimer_timeout"]

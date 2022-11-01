@@ -151,6 +151,12 @@ shape = SubResource( 3 )
 
 [node name="AreaAtraccion" parent="." instance=ExtResource( 1 )]
 
+[node name="SpriteZonaRecarga" parent="AreaAtraccion" index="0"]
+modulate = Color( 4.06275, 0, 0, 0.196078 )
+
+[node name="SpriteZonaInterna" parent="AreaAtraccion" index="2"]
+modulate = Color( 27.4, 0, 0.02, 0.02 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/default = SubResource( 4 )
 anims/rotacion_anti_horario = SubResource( 5 )
