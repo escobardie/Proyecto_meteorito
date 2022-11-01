@@ -19,6 +19,9 @@ signal cambio_energia_laser(energia_max, energia_actual)
 signal ocultar_energia_laser()
 signal cambio_energia_escudo(energia_max, energia_actual)
 signal ocultar_energia_escudo()
+signal minimapa_objeto_creado()
+signal minimapa_objeto_destruido(objeto)
+signal ocultar_minimapa()
 
 func _ready() -> void:
 	pass 

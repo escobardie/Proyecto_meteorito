@@ -3,6 +3,9 @@ class_name ReleMasa
 extends Node2D
 
 ## METODOS 
+func _ready() -> void:
+	Eventos.emit_signal("minimapa_objeto_creado")
+
 
 ## METODOS CUSTOMER
 func atraer_player(body:Node) -> void:
@@ -24,10 +27,12 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 		$AnimationPlayer.play("activada")
 
 func _on_DetectorPlayer_body_entered(body: Node) -> void:
-	$DetectorPlayer/CollisionShape2D.set_deferred("disabled", true)
-	$AnimationPlayer.play("super_activada")
-	body.desactivar_controles()
-	atraer_player(body)
+	
+	if body is Player:
+		$DetectorPlayer/CollisionShape2D.set_deferred("disabled", true)
+		$AnimationPlayer.play("super_activada")
+		body.desactivar_controles()
+		atraer_player(body)
 
 
 func _on_Tween_tween_all_completed() -> void:
