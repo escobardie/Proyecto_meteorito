@@ -22,10 +22,14 @@ var num_explosiones:int = 3
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_SFX:AudioStreamPlayer = $ImpactSFX
 onready var canion:Canion = $Canion
+onready var barra_salud:ProgressBar = $BarraSalud
 
 
 ## METODOS
 func _ready() -> void:
+	barra_salud.set_valores(hitpoints)
+	#barra_salud.max_value = hitpoints
+	#barra_salud.value = hitpoints
 	controlador_estado(estado_actual)
 
 
@@ -54,6 +58,8 @@ func recibir_danio(danio:float) -> void:
 	hitpoints -= danio
 	if hitpoints <= 0.0:
 		destruir()
+	
+	barra_salud.controlar_barra(hitpoints,true)
 	impacto_SFX.play()
 
 func destruir() -> void:

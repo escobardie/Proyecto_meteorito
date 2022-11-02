@@ -35,7 +35,6 @@ tiempo_limite = 300
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
 position = Vector2( 2598.95, 149.432 )
 tipo_peligro = "Meteorito"
-numero_peligros = 2
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 

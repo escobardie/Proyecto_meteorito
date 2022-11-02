@@ -13,6 +13,7 @@ export(Array, PackedScene) var rutas
 onready var impacto_sfx:AudioStreamPlayer = $ImpactoSFX
 onready var timer_spawner_orbitales:Timer = $TimerSpawnerEnemigos
 onready var ruta_seleccionada:Path2D #= $RutaEnemiga
+onready var barra_salud:ProgressBar = $BarraSalud
 
 ## ATRIBUTOS
 var esta_destruida:bool = false
@@ -20,6 +21,7 @@ var posicion_spawn:Vector2 = Vector2.ZERO
 
 ## METODOS
 func _ready() -> void:
+	barra_salud.set_valores(hitpoints)
 	timer_spawner_orbitales.wait_time = intervalo_spawn
 	$AnimationPlayer.play(elegir_animacion_random())
 	seleccionar_ruta()
@@ -57,8 +59,7 @@ func recibir_danio(danio:float) ->void:
 	if hitpoints <= 0 and not esta_destruida:
 		esta_destruida = true
 		destruir()
-		#queue_free()
-	
+	barra_salud.set_hitpoints_actual(hitpoints)
 	impacto_sfx.play()
 
 func destruir() -> void:

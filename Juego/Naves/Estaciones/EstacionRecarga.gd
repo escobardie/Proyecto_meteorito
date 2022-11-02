@@ -9,12 +9,19 @@ export var radio_energia_entregada:float = 0.05
 ## ATRIBUTOS ONREADY
 onready var carga_sfx:AudioStreamPlayer = $CargaSFX
 onready var estacion_VFX:AnimationPlayer = $AnimationEstacionRecarga
+onready var barra_energia:ProgressBar = $BarraEnergia
 
 ## ATRIBUTOS
 var nave_player:Player = null
 var player_en_zona:bool = false
 
 ## METODOS
+func _ready() -> void:
+	barra_energia.max_value = energia
+	barra_energia.value = energia
+
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not puede_recargar(event):
 		return
@@ -49,10 +56,9 @@ func control_energia() -> void:
 	if energia <= 0.0:
 		$VacioSFX.play()
 		estacion_VFX.play("sin_energia")
-	# solo para ver, QUITAR LUEGO
-	print("Energia Estacion: ", energia)
 	
-	
+	barra_energia.value = energia
+
 
 ## SEÑALES INTERNAS
 func _on_AreaColision_body_entered(body: Node) -> void:

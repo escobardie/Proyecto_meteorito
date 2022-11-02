@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Juego/Naves/Estaciones/AreaAtraccion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Estaciones/spaceRecarga.png" type="Texture" id=2]
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Naves/Estaciones/sinEnergia.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Naves/Estaciones/cargaEnergia.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Juego/UI/HUD/Kenney_Future_.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 60.1218
@@ -204,6 +205,28 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0392157, 0.65098, 0.0627451, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.0352941, 0, 1 )
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=7]
+size = 39
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
 [node name="EstacionRecarga" type="Node2D" groups=[
 "minimapa",
 ]]
@@ -243,6 +266,19 @@ bus = "SFX"
 [node name="VacioSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "SFX"
+
+[node name="BarraEnergia" type="ProgressBar" parent="."]
+margin_left = -140.0
+margin_top = -232.108
+margin_right = 140.0
+margin_bottom = -182.108
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+value = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="body_entered" from="AreaRecarga" to="." method="_on_AreaRecarga_body_entered"]
