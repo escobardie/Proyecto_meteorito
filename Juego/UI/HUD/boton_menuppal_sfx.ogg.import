@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boton_menuppal_sfx.ogg-9c10c3e98cafde8c3f4c003f19a09e5c.oggstr"
+
+[deps]
+
+source_file="res://Juego/UI/HUD/boton_menuppal_sfx.ogg"
+dest_files=[ "res://.import/boton_menuppal_sfx.ogg-9c10c3e98cafde8c3f4c003f19a09e5c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

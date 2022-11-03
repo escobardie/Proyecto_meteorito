@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-reckless-getaway-short.wav-0e7acdf914b473b33317a29a099f3747.sample"
+
+[deps]
+
+source_file="res://Juego/Musica/POL-reckless-getaway-short.wav"
+dest_files=[ "res://.import/POL-reckless-getaway-short.wav-0e7acdf914b473b33317a29a099f3747.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
