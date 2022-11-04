@@ -8,10 +8,13 @@ onready var info_time_restante:ContenedorInformacion = $InfoTiempoRestante
 onready var info_laser:ContenedorInformacionEnergia = $InfoLaser
 onready var info_escudo:ContenedorInformacionEnergia = $InfoEscudo
 
+onready var info_n_nivel:ContenedorInformacion = $InfoNumeroNivel
+
 
 
 ## METODOS
 func _ready() -> void:
+	#info_numero_nive() 
 	conectar_seniales()
 
 
@@ -35,6 +38,9 @@ func conectar_seniales() -> void:
 	Eventos.connect("ocultar_energia_escudo", info_escudo, "ocultar")
 	
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
+	
+	Eventos.connect("numero_nivel", self, "_on_numero_nivel")
+	
 
 func fade_in() -> void:
 	$FadeCanvas/AnimationPlayer.play("fade_in")
@@ -84,3 +90,8 @@ func _on_nave_destruida(nave:NaveBase, _posicion, _explosion) ->void:
 		get_tree().call_group("contenedor_info", "ocultar")
 
 
+func _on_numero_nivel(nivel:int) ->void:
+	info_n_nivel.mostrar()
+	info_n_nivel.modificar_texto(
+		"Nivel: {cantidad}".format({"cantidad":nivel})
+	)

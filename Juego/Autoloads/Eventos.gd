@@ -22,6 +22,9 @@ signal ocultar_energia_escudo()
 signal minimapa_objeto_creado()
 signal minimapa_objeto_destruido(objeto)
 signal ocultar_minimapa()
+## SIGUIENTE NIVEL
+signal nivel_completo()
+signal numero_nivel(n_nivel)
 
 func _ready() -> void:
 	pass 

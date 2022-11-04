@@ -3,6 +3,12 @@ class_name Nivel
 extends Node2D
 
 ## ATRIBUTOS EXPORT
+export(String, FILE, "*.tscn") var prox_nivel = ""
+
+#usaremos esto para identifica en que nivel estamos
+export var numero_nivel:int = 0
+#export var auto_ocultar:bool = false setget set_auto_ocultar
+##################
 export var musica_nivel:AudioStream = null
 export var musica_combate:AudioStream = null
 export var explosion:PackedScene = null
@@ -28,8 +34,17 @@ var meteoritos_totales:int = 0
 var player:Player = null
 var numero_bases_enemigas = 0
 
+##################################
+## SETTERS AND GETTERS
+
+##################################
+
+
+
 ## METODOS
 func _ready() -> void:
+	
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	MusicaJuego.set_streams(musica_nivel, musica_combate)
 	MusicaJuego.play_musica_nivel()
@@ -42,6 +57,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	actualizador_timer.start()
 	
+	Eventos.emit_signal("numero_nivel", numero_nivel)
+	
 
 ## METODOS CUSTOMER
 func conectar_seniales() -> void:
@@ -52,6 +69,7 @@ func conectar_seniales() -> void:
 	Eventos.connect("nave_en_sector_peligro", self, "_on_nave_en_sector_peligroso")
 	Eventos.connect("base_destruida", self, "_on_base_destruida")
 	Eventos.connect("spawn_orbital", self, "_on_spawn_orbital")
+	Eventos.connect("nivel_completo", self, "_on_nivel_completo")
 
 func crear_rele() ->void:
 	var new_rele_masa:ReleMasa = rele_masa.instance()
@@ -232,7 +250,13 @@ func _on_nave_en_sector_peligroso(centro_cam:Vector2, tipo_peligro:String, num_p
 func _on_spawn_orbital(enemigo: EnemigoOrbital) -> void:
 	contenedor_enemigo.add_child(enemigo)
 
+func _on_nivel_completo() ->void:
+	Eventos.emit_signal("nivel_terminado")
+	yield(get_tree().create_timer(1.0),"timeout")
+	get_tree().change_scene(prox_nivel)
 
+
+## SEÑALES INTERNAS
 func _on_TweenCamara_tween_completed(object: Object, _key: NodePath) -> void:
 	#para solucionar el bog de pantalla al salir de la zona de meteoritos
 	if object.name == "CamaraPlayer":

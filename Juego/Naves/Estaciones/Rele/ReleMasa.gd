@@ -36,4 +36,4 @@ func _on_DetectorPlayer_body_entered(body: Node) -> void:
 
 
 func _on_Tween_tween_all_completed() -> void:
-	print("SOS UN CRACK, PASASTE EL NIVEL")
+	Eventos.emit_signal("nivel_completo")

@@ -165,7 +165,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Proyecto_meteorito"
-run/main_scene="res://Juego/Niveles/NivelTest.tscn"
+run/main_scene="res://Juego/UI/HUD/MenuPpal.tscn"
 config/icon="res://icon_game.png"
 
 [autoload]
