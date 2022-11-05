@@ -1,17 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Juego/Naves/Estaciones/AreaAtraccion.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Juego/Naves/Estaciones/spaceRecarga.png" type="Texture" id=2]
+[ext_resource path="res://Juego/Naves/Estaciones/AreaColision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Naves/Estaciones/sinEnergia.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Naves/Estaciones/cargaEnergia.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Juego/UI/HUD/Kenney_Future_.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 60.1218
-height = 193.505
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "idle"
 length = 6.0
 loop = true
@@ -88,7 +84,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.4, 0.4 ), Vector2( 0.34, 0.34 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "recarga"
 length = 6.0
 loop = true
@@ -153,7 +149,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0.4, 0.4 ), Vector2( 0.17, 0.17 ), Vector2( 0.4, 0.4 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 6.0
 loop = true
 tracks/0/type = "value"
@@ -205,7 +201,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0392157, 0.65098, 0.0627451, 1 )
 border_width_left = 4
 border_width_top = 4
@@ -213,7 +209,7 @@ border_width_bottom = 4
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 1, 0.0352941, 0, 1 )
 border_width_top = 4
 border_width_right = 4
@@ -221,7 +217,7 @@ border_width_bottom = 4
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 39
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
@@ -233,17 +229,7 @@ font_data = ExtResource( 6 )
 rotation = 6.28319
 script = ExtResource( 3 )
 
-[node name="AreaColision" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 31
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaColision"]
-shape = SubResource( 1 )
-
-[node name="SpriteEstacion" type="Sprite" parent="AreaColision"]
-z_index = 1
-texture = ExtResource( 2 )
-region_rect = Rect2( -43.5483, -12.8283, 246.672, 304.458 )
+[node name="AreaColision" parent="." instance=ExtResource( 2 )]
 
 [node name="AreaRecarga" parent="." instance=ExtResource( 1 )]
 
@@ -255,9 +241,9 @@ modulate = Color( 0.0196078, 0.32549, 0.490196, 0.568627 )
 
 [node name="AnimationEstacionRecarga" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/idle = SubResource( 2 )
-anims/recarga = SubResource( 3 )
-anims/sin_energia = SubResource( 4 )
+anims/idle = SubResource( 1 )
+anims/recarga = SubResource( 2 )
+anims/sin_energia = SubResource( 3 )
 
 [node name="CargaSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -272,9 +258,9 @@ margin_left = -140.0
 margin_top = -232.108
 margin_right = 140.0
 margin_bottom = -182.108
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 value = 80.0
 __meta__ = {
 "_edit_use_anchors_": false

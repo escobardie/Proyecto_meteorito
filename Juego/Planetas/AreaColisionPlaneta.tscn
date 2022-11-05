@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="AreaColisionPlaneta" type="Area2D"]
+collision_layer = 0
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+
+[node name="SpritePlaneta" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 1

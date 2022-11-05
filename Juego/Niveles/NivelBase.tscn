@@ -31,6 +31,8 @@ tiempo_limite = 300
 
 [node name="HUD" parent="." instance=ExtResource( 16 )]
 
+[node name="PeligroGravedad" type="Node" parent="."]
+
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="ContenedorEstaciones" type="Node" parent="."]

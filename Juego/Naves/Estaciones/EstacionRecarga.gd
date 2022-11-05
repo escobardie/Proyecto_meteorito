@@ -3,7 +3,7 @@ class_name EstacionRecarga
 extends Node2D
 
 ## ATRIBUTOS EXPORT
-export var energia:float = 6.0
+export var energia:float = 10.0
 export var radio_energia_entregada:float = 0.05
 
 ## ATRIBUTOS ONREADY
