@@ -1,15 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/Planetas/Sol_1.tscn" type="PackedScene" id=5]
 
 [node name="Nivel1" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/Niveles/Nivel2.tscn"
 numero_nivel = 1
 
+[node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 5 )]
+position = Vector2( 2941.45, -2020.59 )
+scale = Vector2( 3, 3 )
+
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
-position = Vector2( -215.756, 1654.13 )
+position = Vector2( 847.137, 1667.58 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 2 )]
-position = Vector2( 1088, 2024 )
+position = Vector2( 4357.41, 1176.38 )
+hitpoints = 10.0
+numero_orbitales = 2
+
+[node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1493.41, 543.058 )
+tipo_peligro = "Enemigo"
+numero_peligros = 2
