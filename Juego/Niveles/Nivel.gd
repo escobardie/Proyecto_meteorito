@@ -43,8 +43,6 @@ var numero_bases_enemigas = 0
 
 ## METODOS
 func _ready() -> void:
-	
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	MusicaJuego.set_streams(musica_nivel, musica_combate)
 	MusicaJuego.play_musica_nivel()
@@ -54,11 +52,13 @@ func _ready() -> void:
 	crear_contenedor()
 	numero_bases_enemigas = contabilizar_base_enemiga()
 	player = DatosJuego.get_player_actual()
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	actualizador_timer.start()
-	
 	Eventos.emit_signal("numero_nivel", numero_nivel)
-	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pausa"):
+		get_tree().quit()
 
 ## METODOS CUSTOMER
 func conectar_seniales() -> void:

@@ -60,11 +60,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		escudo.activar()
 
 func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
-	#apply_central_impulse que tiene como parámetro un Vector2 que es el impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
+	#apply_central_impulse que tiene como parámetro un Vector2 que es el 
+	#impulso y nos permite aplicar dicho impulso direccional sin afectar la rotación
 	apply_central_impulse(empuje.rotated(rotation))
 	#Para manejar rotaciones de un rigidbody vamos a utilizar apply_torque_impulse
-	#que lo que hace es tomar como parámetro un valor del tipo float que es el torque y le aplica un impulso rotacional al cuerpo.
+	#que lo que hace es tomar como parámetro un valor del tipo float que es el torque y
+	# le aplica un impulso rotacional al cuerpo.
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
+	#apply_torque_impulse(rotation)
 
 func _process(_delta: float) -> void:
 	player_input()
@@ -83,6 +86,13 @@ func player_input() -> void:
 		empuje = Vector2(-potencia_motor, 0)
 		motor_SFX.sonido_on()
 	
+	# EMPUJES LATERALES
+	if Input.is_action_pressed("mover_der"):
+		empuje = Vector2(0, potencia_motor)
+		
+	if Input.is_action_pressed("mover_izq"):
+		empuje = Vector2(0, -potencia_motor)
+	
 	# ROTACION
 	dir_rotacion = 0
 	if Input.is_action_pressed("mover_horario"):
@@ -95,6 +105,18 @@ func player_input() -> void:
 		canion.set_esta_disparando(true)
 	if Input.is_action_just_released("disparo_ppal"):
 		canion.set_esta_disparando(false)
+	
+	# SUPER VELOCIDAD (top secret)
+	#al viajar en hiper velocidad se desactivara los controles, y la colisión,
+	#solo podrás ir recto but...
+	#si sueltas el hiper podrás colisionar con todo, y moverte libremente
+	if Input.is_action_pressed("super_velocidad"):
+		empuje = Vector2((potencia_motor * 5), 0)
+		controlador_estado(ESTADOS.INVENSIBLE)
+	if Input.is_action_just_released("super_velocidad"):
+			controlador_estado(ESTADOS.VIVO)
+	
+	
 
 func esta_input_activo() ->bool:
 	if estado_actual in [ESTADOS.MUERTO, ESTADOS.SPAWN]:
