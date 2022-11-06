@@ -93,10 +93,10 @@ tracks/4/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 997.19
+radius = 925.672
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 1108.53
+radius = 472.993
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.917647, 0.968627, 0.00392157, 1 )

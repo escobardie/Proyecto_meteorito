@@ -6,6 +6,8 @@ export(String, FILE, "*.tscn") var nivel_inicial = ""
 
 ## METODOS
 func _ready() -> void:
+	#para liberar el mouse en el menu ppal
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	#activa pantalla completa en el juego
 	OS.set_window_fullscreen(true)
 	MusicaJuego.play_musica(MusicaJuego.get_lista_musicas().menu_principal)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Juego/Planetas/Planeta.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Planetas/NicePng_purple-star-png_561085.png" type="Texture" id=2]
+
+[node name="SuperN" instance=ExtResource( 1 )]
+scale = Vector2( 5, 5 )
+
+[node name="SpritePlaneta" parent="AreaColisionPlaneta" index="1"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="SpriteZonaRecarga" parent="AreaAtraccion" index="0"]
+modulate = Color( 0.368627, 0.313726, 0.905882, 1 )
+
+[node name="SpriteZonaInterna" parent="AreaAtraccion" index="2"]
+modulate = Color( 0.560784, 0.407843, 1, 1 )
+
+[editable path="AreaColisionPlaneta"]
+[editable path="AreaAtraccion"]

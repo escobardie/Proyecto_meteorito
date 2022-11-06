@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/kisspng-glowing-rooms-cologne-3d-schwarzlicht-minigolf-glo-supernova-5b1463d9299474.0497708815280629371703.png-d3a6eb99726aa4a7a5d9475152815eed.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Juego/Planetas/kisspng-glowing-rooms-cologne-3d-schwarzlicht-minigolf-glo-supernova-5b1463d9299474.0497708815280629371703.png"
+dest_files=[ "res://.import/kisspng-glowing-rooms-cologne-3d-schwarzlicht-minigolf-glo-supernova-5b1463d9299474.0497708815280629371703.png-d3a6eb99726aa4a7a5d9475152815eed.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

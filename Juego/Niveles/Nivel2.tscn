@@ -1,13 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=4]
 
 [node name="Nivel2" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/Niveles/Nivel3.tscn"
 numero_nivel = 2
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 1384, 496 )
-tipo_peligro = "Enemigo"
+position = Vector2( 17629, 87.3423 )
+scale = Vector2( 1, 100 )
+tipo_peligro = "Meteorito"
 numero_peligros = 4
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
+position = Vector2( -15190.8, -1579.9 )
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
+position = Vector2( 28967, -1047.85 )
+intervalo_spawn = 0.0
+
+[node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
+position = Vector2( -11391.2, -146.192 )
+scale = Vector2( 1, 100 )
+tipo_peligro = "Enemigo"
+numero_peligros = 2

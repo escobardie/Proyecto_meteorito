@@ -3,9 +3,9 @@ class_name BaseEnemiga
 extends Node2D
 
 ## ATRIBUTOS EXPORT
-export var hitpoints:float = 30.0
+export var hitpoints:float = 1.0
 export var orbital:PackedScene = null
-export var numero_orbitales:int = 10
+export var numero_orbitales:int = 1
 export var intervalo_spawn:float = 1.5
 export(Array, PackedScene) var rutas
 
