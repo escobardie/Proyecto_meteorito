@@ -10,20 +10,22 @@ prox_nivel = "res://Juego/Niveles/Nivel3.tscn"
 numero_nivel = 2
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 17629, 87.3423 )
-scale = Vector2( 1, 100 )
+position = Vector2( 5925.88, 743.342 )
+scale = Vector2( 1, 5 )
 tipo_peligro = "Meteorito"
 numero_peligros = 4
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
-position = Vector2( -15190.8, -1579.9 )
+position = Vector2( 2676.57, -449.735 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
-position = Vector2( 28967, -1047.85 )
-intervalo_spawn = 0.0
+position = Vector2( 7668.38, 728.132 )
+hitpoints = 10.0
+numero_orbitales = 2
+intervalo_spawn = 1.0
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
-position = Vector2( -11391.2, -146.192 )
-scale = Vector2( 1, 100 )
+position = Vector2( 4208.18, 692.3 )
+scale = Vector2( 1, 20 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2

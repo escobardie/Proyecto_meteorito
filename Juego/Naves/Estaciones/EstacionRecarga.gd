@@ -68,8 +68,8 @@ func _on_AreaColision_body_entered(body: Node) -> void:
 func _on_AreaRecarga_body_entered(body: Node) -> void:
 	if body is Player:
 		#al entrar la nave rep animacion mientras tenga energia hacer
-		if energia > 0:
-			estacion_VFX.play("recarga")
+		#if energia > 0:
+		#	estacion_VFX.play("recarga")
 		player_en_zona = true
 		nave_player = body
 		Eventos.emit_signal("detecto_zona_recarga", true)

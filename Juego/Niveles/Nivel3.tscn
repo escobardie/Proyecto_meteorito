@@ -1,18 +1,79 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/Planetas/Sol_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Planetas/Sol_1.tscn" type="PackedScene" id=6]
 
 [node name="Nivel3" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/Niveles/Nivel4.tscn"
 numero_nivel = 3
 
+[node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 6 )]
+position = Vector2( 24144.7, 8512.6 )
+scale = Vector2( 10, 10 )
+
+[node name="Sol_3" parent="PeligroGravedad" index="1" instance=ExtResource( 6 )]
+position = Vector2( 5226.92, 9858.98 )
+scale = Vector2( 4, 4 )
+
+[node name="Sol_4" parent="PeligroGravedad" index="2" instance=ExtResource( 6 )]
+position = Vector2( 15019.8, 4042.01 )
+scale = Vector2( 3, 3 )
+
+[node name="Sol_2" parent="PeligroGravedad" index="3" instance=ExtResource( 5 )]
+position = Vector2( 5808.26, -9093.01 )
+scale = Vector2( 5, 5 )
+
+[node name="Sol_5" parent="PeligroGravedad" index="4" instance=ExtResource( 5 )]
+position = Vector2( 14537.3, -3582.83 )
+scale = Vector2( 2, 2 )
+
+[node name="Sol_6" parent="PeligroGravedad" index="5" instance=ExtResource( 5 )]
+position = Vector2( 20996.7, -1227.56 )
+scale = Vector2( 3, 3 )
+
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 15975.8, -1567.1 )
+position = Vector2( 15722.6, -1907.5 )
 rotation = 0.813323
-scale = Vector2( 30, 1 )
+scale = Vector2( 5, 1 )
+tipo_peligro = "Meteorito"
+numero_peligros = 2
+
+[node name="SectorDePeligro2" parent="TriggersLluviaMeteoritos" index="1" instance=ExtResource( 2 )]
+position = Vector2( 8014.14, 903.599 )
+rotation = -0.813323
+scale = Vector2( 5, 1 )
+tipo_peligro = "Meteorito"
+numero_peligros = 2
+
+[node name="SectorDePeligro3" parent="TriggersLluviaMeteoritos" index="2" instance=ExtResource( 2 )]
+position = Vector2( 3297, 5378.84 )
+rotation = -0.813323
+scale = Vector2( 5, 1 )
+tipo_peligro = "Meteorito"
+numero_peligros = 2
+
+[node name="SectorDePeligro4" parent="TriggersLluviaMeteoritos" index="3" instance=ExtResource( 2 )]
+position = Vector2( 9626.84, 3403.28 )
+rotation = -0.813323
+scale = Vector2( 5, 1 )
+tipo_peligro = "Meteorito"
+numero_peligros = 2
+
+[node name="SectorDePeligro5" parent="TriggersLluviaMeteoritos" index="4" instance=ExtResource( 2 )]
+position = Vector2( 6643.35, 6225.51 )
+rotation = -0.813323
+scale = Vector2( 5, 1 )
+tipo_peligro = "Meteorito"
+numero_peligros = 2
+
+[node name="SectorDePeligro6" parent="TriggersLluviaMeteoritos" index="5" instance=ExtResource( 2 )]
+position = Vector2( 9909.06, 6225.51 )
+rotation = -0.813323
+scale = Vector2( 5, 1 )
 tipo_peligro = "Meteorito"
 numero_peligros = 2
 
@@ -20,11 +81,13 @@ numero_peligros = 2
 position = Vector2( 17830.1, -3772.45 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( 18044, 11737.3 )
+position = Vector2( 18247.4, 11872.9 )
+hitpoints = 15.0
+numero_orbitales = 3
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
-position = Vector2( 16402.2, 9779.73 )
-rotation = -0.270526
+position = Vector2( 14910.5, 10525.6 )
+rotation = -0.813323
 scale = Vector2( 40, 1 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2

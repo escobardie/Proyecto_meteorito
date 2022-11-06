@@ -118,6 +118,7 @@ tracks/1/keys = {
 
 [node name="SectorMeteoritos" type="Node2D"]
 script = ExtResource( 2 )
+intervalo_spawn = 2.0
 
 [node name="BordesNavePlayer" type="Node2D" parent="."]
 modulate = Color( 0.121569, 0.454902, 0.745098, 1 )

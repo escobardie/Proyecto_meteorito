@@ -15,9 +15,9 @@ position = Vector2( 9446.64, -2729.83 )
 scale = Vector2( 5, 5 )
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 6032.29, 635.408 )
+position = Vector2( 6892.7, 917.631 )
 rotation = 1.5708
-scale = Vector2( 15, 1 )
+scale = Vector2( 5, 1 )
 tipo_peligro = "Meteorito"
 numero_peligros = 5
 

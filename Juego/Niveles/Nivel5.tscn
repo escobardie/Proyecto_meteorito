@@ -11,45 +11,47 @@ prox_nivel = "res://Juego/Niveles/Nivel6.tscn"
 numero_nivel = 5
 
 [node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 5 )]
-position = Vector2( 19933.4, -17617 )
+position = Vector2( 15519.8, -10824.3 )
 scale = Vector2( 10, 10 )
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 32047, -8853 )
-rotation = 0.633555
-scale = Vector2( 50, 1 )
+position = Vector2( 21834.2, -6892.94 )
+rotation = 0.363028
+scale = Vector2( 5, 1 )
 tipo_peligro = "Meteorito"
 numero_peligros = 4
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 3 )]
-position = Vector2( 40611.4, -13351.8 )
+position = Vector2( 22198.3, -8129.71 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( 28496.5, 1844.21 )
+position = Vector2( 22502.5, 2961.74 )
+hitpoints = 20.0
+numero_orbitales = 5
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
-position = Vector2( 20844.6, -1020.76 )
+position = Vector2( 14850.6, 96.7695 )
 rotation = -0.722566
 scale = Vector2( 30, 1 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="SectorDePeligro2" parent="TriggersInterceptores" index="1" instance=ExtResource( 2 )]
-position = Vector2( 27429.6, -1144.16 )
+position = Vector2( 21435.6, -26.6309 )
 rotation = 0.813323
 scale = Vector2( 30, 1 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="SectorDePeligro3" parent="TriggersInterceptores" index="2" instance=ExtResource( 2 )]
-position = Vector2( 20837.2, 4253.59 )
+position = Vector2( 14843.2, 5371.13 )
 rotation = 0.633555
 scale = Vector2( 30, 1 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="SectorDePeligro4" parent="TriggersInterceptores" index="3" instance=ExtResource( 2 )]
-position = Vector2( 27640.7, 4114.99 )
+position = Vector2( 21646.7, 5232.53 )
 rotation = -0.645772
 scale = Vector2( 30, 1 )
 tipo_peligro = "Enemigo"

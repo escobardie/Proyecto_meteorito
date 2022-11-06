@@ -45,7 +45,6 @@ func control_energia(consumo:float)-> void:
 func activar()-> void:
 	if energia <= 0.0:
 		return
-	#print("escudo activado")
 	esta_activado = true
 	controlar_colision(false)
 	$AnimationPlayer.play("activando")

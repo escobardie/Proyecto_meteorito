@@ -86,8 +86,6 @@ func crear(pos:Vector2, dir:Vector2, tamanio:float) ->void:
 	angular_velocity = (vel_angular_base / tamanio) * random_velocidad()
 	#CALCULAR HITPOINTS
 	hitpoints = hitpoints_base * tamanio
-	#SOLO DEBUG
-	print("hitpoints ", hitpoints)
 
 
 

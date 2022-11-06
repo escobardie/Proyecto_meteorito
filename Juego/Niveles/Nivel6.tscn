@@ -26,7 +26,7 @@ scale = Vector2( 4, 4 )
 position = Vector2( 18299.7, 3797.31 )
 rotation = 0.994838
 scale = Vector2( 10, 1 )
-tipo_peligro = "Meteorito"
+tipo_peligro = "Enemigo"
 numero_peligros = 3
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 3 )]
@@ -34,10 +34,12 @@ position = Vector2( 5339.11, 430.095 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
 position = Vector2( 22859.3, 714.297 )
+hitpoints = 25.0
+numero_orbitales = 7
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
 position = Vector2( 19245.6, -1601.27 )
 rotation = 2.44172
 scale = Vector2( 5, 1 )
-tipo_peligro = "Enemigo"
+tipo_peligro = "Meteorito"
 numero_peligros = 5

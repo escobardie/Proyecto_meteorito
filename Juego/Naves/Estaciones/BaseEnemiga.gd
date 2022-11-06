@@ -32,8 +32,7 @@ func _process(_delta: float) -> void:
 		return
 	
 	var dir_player:Vector2 = player_objetivo.global_position - global_position
-	var angular_player:float = rad2deg(dir_player.angle())
-	print(angular_player)
+	var _angular_player:float = rad2deg(dir_player.angle())
 
 
 

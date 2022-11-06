@@ -11,18 +11,23 @@ prox_nivel = "res://Juego/Niveles/Nivel2.tscn"
 numero_nivel = 1
 
 [node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 5 )]
-position = Vector2( 2941.45, -2020.59 )
+position = Vector2( 2699.27, -1522.78 )
 scale = Vector2( 3, 3 )
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
-position = Vector2( 2445.52, 1658.6 )
+position = Vector2( 2051.22, 1824.72 )
 energia = 50.0
 radio_energia_entregada = 0.1
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 2 )]
-position = Vector2( 4231.69, 574.74 )
+position = Vector2( 4181.29, 635.216 )
+hitpoints = 5.0
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1493.41, 543.058 )
-tipo_peligro = "Enemigo"
+position = Vector2( 1831.79, 644.309 )
+scale = Vector2( 1, 5 )
+tipo_peligro = "Meteorito"
 numero_peligros = 2
+
+[node name="StarFieldBackground" parent="." index="11"]
+color_fondo = Color( 0.0941176, 0.0980392, 0, 1 )

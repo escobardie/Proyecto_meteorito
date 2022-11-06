@@ -23,7 +23,6 @@ func recibir_danio(danio:float) -> void:
 
 ## SEÑALES INTERNAS
 func _on_Area2D_body_entered(body: Node) -> void:
-	print("entra por aca")
 	#preguntamos si el que toca el area es el PLAYER
 	if body is Player:
 		#entonces ejecutamos su metodo
