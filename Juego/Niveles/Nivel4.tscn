@@ -15,7 +15,7 @@ position = Vector2( 241.208, -30550 )
 scale = Vector2( 50, 50 )
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( -15206.2, -5802.66 )
+position = Vector2( -18022.2, -7082.66 )
 rotation = -0.994838
 scale = Vector2( 50, 1 )
 tipo_peligro = "Enemigo"
@@ -27,12 +27,12 @@ energia = 50.0
 radio_energia_entregada = 0.1
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( -22904.7, -10281 )
+position = Vector2( -28152.7, -19753 )
 hitpoints = 20.0
 numero_orbitales = 5
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
-position = Vector2( -19842.5, -7859.07 )
+position = Vector2( -24834.5, -14003.1 )
 rotation = -0.994838
 scale = Vector2( 50, 1 )
 tipo_peligro = "Enemigo"

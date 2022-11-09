@@ -11,19 +11,19 @@ prox_nivel = "res://Juego/Niveles/Nivel7.tscn"
 numero_nivel = 6
 
 [node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 5 )]
-position = Vector2( 16131.3, 580.322 )
+position = Vector2( 8469.26, 648.128 )
 scale = Vector2( 5, 5 )
 
 [node name="Sol_2" parent="PeligroGravedad" index="1" instance=ExtResource( 5 )]
-position = Vector2( 20154.2, 5788.55 )
+position = Vector2( 12492.2, 5856.36 )
 scale = Vector2( 3, 3 )
 
 [node name="Sol_3" parent="PeligroGravedad" index="2" instance=ExtResource( 5 )]
-position = Vector2( 21925.3, -3480.64 )
+position = Vector2( 14263.3, -3412.83 )
 scale = Vector2( 4, 4 )
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 2 )]
-position = Vector2( 18299.7, 3797.31 )
+position = Vector2( 10637.7, 3865.12 )
 rotation = 0.994838
 scale = Vector2( 10, 1 )
 tipo_peligro = "Enemigo"
@@ -33,12 +33,12 @@ numero_peligros = 3
 position = Vector2( 5339.11, 430.095 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( 22859.3, 714.297 )
+position = Vector2( 15197.3, 782.103 )
 hitpoints = 25.0
 numero_orbitales = 7
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 2 )]
-position = Vector2( 19245.6, -1601.27 )
+position = Vector2( 11583.6, -1533.46 )
 rotation = 2.44172
 scale = Vector2( 5, 1 )
 tipo_peligro = "Meteorito"

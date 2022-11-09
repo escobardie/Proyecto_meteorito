@@ -12,7 +12,7 @@ prox_nivel = "res://Juego/Niveles/Nivel4.tscn"
 numero_nivel = 3
 
 [node name="Sol_1" parent="PeligroGravedad" index="0" instance=ExtResource( 6 )]
-position = Vector2( 24144.7, 8512.6 )
+position = Vector2( 24054.2, 8512.6 )
 scale = Vector2( 10, 10 )
 
 [node name="Sol_3" parent="PeligroGravedad" index="1" instance=ExtResource( 6 )]

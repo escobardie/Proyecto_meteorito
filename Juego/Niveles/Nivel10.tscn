@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Planetas/Sol_1.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Juego/Naves/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Naves/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Planetas/Camino.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Juego/Planetas/AgujeroNegro.tscn" type="PackedScene" id=8]
 
 [node name="Nivel10" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/UI/HUD/MenuPpal.tscn"
@@ -15,6 +17,17 @@ numero_nivel = 10
 position = Vector2( 1446.55, -7916.75 )
 scale = Vector2( 5, 5 )
 
+[node name="Camino" parent="PeligroGravedad/Sol_2" index="3" instance=ExtResource( 7 )]
+
+[node name="CollisionShape2D" parent="PeligroGravedad/Sol_2/Camino/Path2D/PathFollow2D/LunaRotando" index="0"]
+visible = false
+
+[node name="Sprite" parent="PeligroGravedad/Sol_2/Camino/Path2D/PathFollow2D/LunaRotando" index="1"]
+visible = false
+
+[node name="Sol_1" parent="PeligroGravedad/Sol_2/Camino/Path2D/PathFollow2D/LunaRotando" index="4" instance=ExtResource( 2 )]
+scale = Vector2( 0.3, 0.3 )
+
 [node name="Sol_1" parent="PeligroGravedad" index="1" instance=ExtResource( 2 )]
 position = Vector2( 6471.49, -5502.19 )
 scale = Vector2( 3, 3 )
@@ -22,6 +35,16 @@ scale = Vector2( 3, 3 )
 [node name="Sol_3" parent="PeligroGravedad" index="2" instance=ExtResource( 2 )]
 position = Vector2( -4875, -6528.51 )
 scale = Vector2( 4, 4 )
+
+[node name="Camino" parent="PeligroGravedad/Sol_3" index="3" instance=ExtResource( 7 )]
+
+[node name="AgujeroNegro" parent="PeligroGravedad" index="3" instance=ExtResource( 8 )]
+position = Vector2( 747.798, -4619.94 )
+scale = Vector2( 5, 1 )
+
+[node name="AgujeroNegro2" parent="PeligroGravedad" index="4" instance=ExtResource( 8 )]
+position = Vector2( 6755.11, -11686.4 )
+scale = Vector2( 5, 5 )
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 6 )]
 position = Vector2( 1602.46, -11192.8 )
@@ -65,3 +88,8 @@ numero_peligros = 5
 
 [node name="StarFieldBackground" parent="." index="11"]
 color_fondo = Color( 0.00392157, 0.0980392, 0.141176, 1 )
+
+[editable path="PeligroGravedad/Sol_2"]
+[editable path="PeligroGravedad/Sol_2/AreaColisionPlaneta"]
+[editable path="PeligroGravedad/Sol_2/AreaAtraccion"]
+[editable path="PeligroGravedad/Sol_2/Camino"]
