@@ -16,7 +16,7 @@ position = Vector2( 2699.27, -1522.78 )
 scale = Vector2( 3, 3 )
 
 [node name="PlanetaConLuna" parent="PeligroGravedad" index="1" instance=ExtResource( 6 )]
-position = Vector2( 2466.51, 598.285 )
+position = Vector2( 3795.77, 1886.89 )
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
 position = Vector2( 2051.22, 1824.72 )
@@ -28,7 +28,7 @@ position = Vector2( 4181.29, 635.216 )
 hitpoints = 5.0
 
 [node name="SectorDePeligro" parent="TriggersInterceptores" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1831.79, 644.309 )
+position = Vector2( 2117.41, 646.042 )
 scale = Vector2( 1, 5 )
 tipo_peligro = "Meteorito"
 numero_peligros = 2
